@@ -1,26 +1,22 @@
-# 키워드 값
-def profile(name, age, main_lang) :
-    print(name, age, main_lang)
+'''지역변수와 전역변수
+* 지역변수 : 함수 내에서만 쓸 수 있다. 
+  함수가 호출될 때 만들어졌다가 함수 호출이 끝나면 사라진다.
+* 전역변수 :  모든 공간(프로그램 내)에서 부를 수 있는 변수 '''
 
-profile(name = "유재석", main_lang = "파이썬", age = 20)
-profile(main_lang = "자바",  age = 25, name = "김태호")
+gun = 10
 
-# 가변인자
-def profile(name, age, lang1, lang2, lang3, lang4, lang5) :
-    print("이름 : {0}\t나이 : {1}\t".format(name, age), end = " ") 
-    # 앞 문장을 출력한 후 밑에 있는 문장을 이어서 출력함
-    print(lang1, lang2, lang3, lang4, lang5)
+def checkpoint(soldiers) : # 경계근무
+  # gun = 20
+  global gun # 전역 공간에 있는 gun 사용
+  gun = gun - soldiers
+  print("[함수 내] 남은 총 : {}".format(gun))
 
+def checkpoint_ret(gun, soldiers) :
+  gun = gun - soldiers
+  print("[함수 내] 남은 총 : {}".format(gun))
+  return gun
 
-profile("유재석", 20, "Pythom", "Java", "C", "C++", "C#")
-profile("김태호", 25, "Kotlin", "Swift", "", "", "")
-
-
-def profile(name, age, *languege) :
-    print("이름 : {0}\t나이 : {1}\t".format(name, age), end = " ") 
-    for lang in languege :
-       print(lang, end = " ")
-    print()
-
-profile("유재석", 20, "Pythom", "Java", "JavaScript", "C", "C++", "C#")
-profile("김태호", 25, "Kotlin", "Swift")
+print("전체 총 : {0}".format(gun))
+#checkpoint(2) # 2명이 경계 근무 나감
+gun = checkpoint_ret(gun, 2)
+print("남은 총 : {0}".format(gun))
