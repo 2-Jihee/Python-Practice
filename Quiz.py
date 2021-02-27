@@ -15,4 +15,15 @@
 키 175cm 남자의 표준 체중은 67.38kg 입니다. '''
 
 def std_weight(hight, gender) :
-    print()
+    if gender == "남자" :
+        std_weight_male = hight * hight * 22 
+        print("키 {0}cm {1}의 표준 체중은 {2}}kg 입니다.".format(round(hight, gender, std_weight_male))
+        return std_weight
+
+    elif gender == "여자" :
+        std_weight_female = highthight * hight * 21
+        printprint("키 {0}cm {1}의 표준 체중은 {2}}kg 입니다.".format(round(hight, gender, std_weight_female))
+        return std_weight
+        
+hight(161)
+gender("여자")
