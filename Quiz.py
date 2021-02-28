@@ -16,14 +16,11 @@
 
 def std_weight(hight, gender) :
     if gender == "남자" :
-        std_weight = hight * hight * 22 
-        print("키 {0}cm {1}의 표준 체중은 {2}}kg 입니다.".format(round(hight, gender, std_weight_male))
-        return std_weight
-
-    elif gender == "여자" :
-        std_weight = highthight * hight * 21
-        printprint("키 {0}cm {1}의 표준 체중은 {2}}kg 입니다.".format(round(hight, gender, std_weight_female))
-        return std_weight
+        return hight * hight * 22
+    else :
+        return highthight * hight * 21
         
-hight(161)
-gender("여자")
+hight = 175
+gender = "남자"
+weight = std_weight(hight / 100, gender)
+print("키 {0}cm {1}의 표준 체중은 {2}kg 입니다.".format(hight, gender, weight))
