@@ -10,4 +10,8 @@
 
 조건 : 파일명은 '1주차.txt', '2주차 txt', ...와 같이 만듭니다. '''
 
-
+report_file = open("{0}주차.txt", "w", encoding="utf8".format(1))
+print("부서 : ", file=report_file)
+print("이름 : ", file=report_file)
+print("업무 요약 : ", file=report_file)
+report_file.close()
