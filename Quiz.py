@@ -1,26 +1,13 @@
-''' 표준 체중을 구하는 프로그램을 작성하시오.
+''' Quiz) 당신은 회사에서 매주 1회 작성해야 하는 보고서가 있습니다.
+보고서는 항상 아래와 같은 형식으로 출력되어야 합니다.
 
-* 표준 체중 : 각 개인의 키에 적당한 체중
+- x 주차 주간 보고 -
+부서 :
+이름 :
+업무 요약 :
 
-(성별에 따른 공식)
-남자 : 키(m) x 키(m) x 22
-여자 : 키(m) x 키(m) x 21
+1주차부터 50주차까지의 보고서 파일을 만드는 프로그램으 작성하시오.
 
-조건1 : 표준 체중은 별도의 함수 내에서 계산
-        * 함수명 : std_weight
-        * 전달값 : 키(hight), 성별(gender)
-조건2 : 표준 체중은 소수점 둘째자리까지 표시
+조건 : 파일명은 '1주차.txt', '2주차 txt', ...와 같이 만듭니다. '''
 
-(출력예제)
-키 175cm 남자의 표준 체중은 67.38kg 입니다. '''
 
-def std_weight(hight, gender) :
-    if gender == "남자" :
-        return hight * hight * 22
-    else :
-        return highthight * hight * 21
-        
-hight = 175
-gender = "남자"
-weight = round(std_weight(hight / 100, gender), 2)
-print("키 {0}cm {1}의 표준 체중은 {2}kg 입니다.".format(hight, gender, weight))
