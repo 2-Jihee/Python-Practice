@@ -1,13 +1,32 @@
-# pickle - 프로그램에서 사용하는 데이터를 파일 형태로 저장하는 것
-import pickle
-# profile_file = open("profile.pickle", "wb")
-# profile = {"이름" : "윤성혁", "나이" : 32, "취미" : ["킹덤", "로스트아크", "지희생각하기"]}
-# print(profile)
-# pickle.dump(profile, profile_file) # profile에 있는 정보를 file에 저장
-# profile_file.close()
+# 클래스
 
-# 파일 불러오기
-profile_file = open("profile.pickle", "rb")
-profile = pickle.load(profile_file) # file에 있는 정보를 profile에 불러오기
-print(profile)
-profile_file.close()
+# 마린 : 공격 유닛, 군인. 총을 쏠 수 있음
+name = "마린" # 유닛의 이름
+hp = 40 # 유닛의 체력
+damage = 5 # 유닛의 공격력
+
+print("{0} 유닛이 생성되었습니다.".format(name))
+print("체력 {0}, 공격력{1}\n".format(hp, damage))
+
+# 탱크 : 공격 유닛, 탱크. 포를 쏠 수 있는데, 일반 모드/ 시즈 모드.
+tank_name = "탱크"
+tank_hp = 150
+tank_damage = 35
+
+print("{0} 유닛이 생성되었습니다.".format(tank_name))
+print("체력 {0}, 공격력{1}\n".format(tank_hp, tank_damage))
+
+tank2_name = "탱크"
+tank2_hp = 150
+tank2_damage = 35
+
+print("{0} 유닛이 생성되었습니다.".format(tank2_name))
+print("체력 {0}, 공격력{1}\n".format(tank2_hp, tank2_damage))
+
+def attack(name, location, damage) :
+    print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(\
+        name, location, damage))
+
+attack(name, "1시", damage)
+attack(tank_name, "1시", tank_damage)
+attack(tank2_name, "1시", tank_damage)
