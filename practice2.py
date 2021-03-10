@@ -6,7 +6,6 @@ class Unit :
         self.name = name
         self.hp = hp
 
-
 # 공격 유닛
 class AttackUnit(Unit) :
     def __init__(self, name, hp, damage) :
@@ -23,12 +22,22 @@ class AttackUnit(Unit) :
         if self.hp <= 0 :
             print("{0} : 파괴되었습니다.".format(self.name))
 
-# 메딕 : 의무병(일반 유닛)
+# 드랍쉽 : 공중 유닛, 수송기. (공격 불가)
+# 날 수 있는 기능을 가진 클래스
+class Flayable :
+    def __init__(self, flying_speed) :
+        self.flying_speed = flying_speed
 
-# 파이어뱃 : 공격유닛, 화염방사기
-firebat1 = AttackUnit("파이어뱃", 50, 16)
-firebat1.attack("5시")
+    def fly(self, name, location) :
+        print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]"\
+            .format(name, location, self.flying_speed))
 
-# 공격 2번 받는다고 가정.
-firebat1.damaged(25)
-firebat1.damaged(25)
+# 공중 공격 유닛 클래스(다중 상속)
+class Flayable_AttackUnit(AttackUnit, Flayable) :
+    def __init__(self, name, hp, damage, flying_speed) :
+        AttackUnit.__init__(self, name, hp, damage)
+        Flayable.__init__(self, flying_speed)
+
+# 발키리 : 공중 공격 유닛, 한번에 14발 미사일을 발사.
+valkyrie = Flayable_AttackUnit("발키리", 200, 6, 5)
+valkyrie.fly(valkyrie.name, "3시") 
