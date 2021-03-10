@@ -2,14 +2,20 @@
 
 # 일반 유닛
 class Unit :
-    def __init__(self, name, hp) :
+    def __init__(self, name, hp, speed) :
         self.name = name
         self.hp = hp
+        self.speed = speed
+
+    def move(self, location) :
+        print("[지상 유닛 이동]")
+        print("{0} : {1} 방향으로 이동합니다. [속도 {2}]"\
+            .format(self.name, location, self.speed))
 
 # 공격 유닛
 class AttackUnit(Unit) :
-    def __init__(self, name, hp, damage) :
-        Unit.__init__(self, name, hp)
+    def __init__(self, name, hp, speed, damage) :
+        Unit.__init__(self, name, hp, speed)
         self.damage = damage
 
     def attack(self, location) :
@@ -35,9 +41,14 @@ class Flayable :
 # 공중 공격 유닛 클래스(다중 상속)
 class Flayable_AttackUnit(AttackUnit, Flayable) :
     def __init__(self, name, hp, damage, flying_speed) :
-        AttackUnit.__init__(self, name, hp, damage)
+        AttackUnit.__init__(self, name, hp, 0, damage) # 지상 스피드 0
         Flayable.__init__(self, flying_speed)
 
-# 발키리 : 공중 공격 유닛, 한번에 14발 미사일을 발사.
-valkyrie = Flayable_AttackUnit("발키리", 200, 6, 5)
-valkyrie.fly(valkyrie.name, "3시") 
+# 벌쳐 : 지상 유닛, 기동성 좋음
+vulture = AttackUnit("벌쳐", 80, 10, 20)
+
+# 배틀크루저 : 공중 유닛, 체력도 굉장히 좋음, 공격력도 좋음
+battlecruiser = Flayable_AttackUnit("배틀크루저", 500, 25, 3)
+
+vulture.move("11시")
+battlecruiser.fly(battlecruiser.name, "9시")
