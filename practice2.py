@@ -96,3 +96,10 @@ class Wraith(Flyable_AttackUnit):
         else: # 클로킹 모드 해제 -> 모드 설정
             print("{0} : 클로킹 모드를 설정합니다.".format_map(self.name))
             self.clocked = True
+
+def game_start():
+    print("[알림] 새로운 게임을 시작합니다.")
+
+def game_over():
+    print("player : gg")
+    print("[player] 님이 게임에서 퇴장하셨습니다.")
