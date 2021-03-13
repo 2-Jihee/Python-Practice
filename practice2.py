@@ -103,3 +103,37 @@ def game_start():
 def game_over():
     print("player : gg")
     print("[player] 님이 게임에서 퇴장하셨습니다.")
+
+# 실제 게임 진행
+game_start()
+
+# 마린 3기 생성
+m1 = Marine()
+m2 = Marine()
+m3 = Marine()
+
+# 탱크 2기 생성
+t1 = Tank()
+t2 = Tank()
+
+# 레이스 1기 생성
+w1 = Wraith()
+
+# 유닛 일괄 관리
+attack_unit = []
+attack_unit.append(m1)
+attack_unit.append(m2)
+attack_unit.append(m3)
+attack_unit.append(t1)
+attack_unit.append(t1)
+attack_unit.append(w1)
+
+# 전군 이동
+for unit in attack_units:
+     unit.move("1시")
+
+# 탱크 시즈모드 개발
+Tank.seize_developed = True
+print("[알림] 탱크 시즈 모드 개발이 완료되었습니다.")
+
+# 공격 모드 준비 (마린 : ㅠ)
