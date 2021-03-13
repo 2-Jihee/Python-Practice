@@ -33,13 +33,13 @@ class Marine(AttackUnit):
     def __init__(self):
         AttackUnit.__init__(self, "마린", 40, 1, 5)
 
-        # 스팀팩 : 일정 시간동안 이동 및 공격 속도가 증가, 체력 10 감소
-        def stimpack(self):
-            if self.hp > 10 :
-                self.hp -= 10
-                print("{0} 스팀팩을 사용합니다. (HP 10 감소)".format(self.name))
-            else :
-                print("{0} : 체력이 부족하여 스팀팩을 사용하지 않습니다.".format(self.name))
+    # 스팀팩 : 일정 시간동안 이동 및 공격 속도가 증가, 체력 10 감소
+    def stimpack(self):
+        if self.hp > 10 :
+            self.hp -= 10
+            print("{0} 스팀팩을 사용합니다. (HP 10 감소)".format(self.name))
+        else :
+            print("{0} : 체력이 부족하여 스팀팩을 사용하지 않습니다.".format(self.name))
             
 # 탱크
 class Tank(AttackUnit):
@@ -65,7 +65,7 @@ class Tank(AttackUnit):
             self.damage /= 2
             self.seize_mode = False
 
-class Flayable :
+class Flyable :
     def __init__(self, flying_speed) :
         self.flying_speed = flying_speed
 
@@ -74,19 +74,19 @@ class Flayable :
             .format(name, location, self.flying_speed))
 
 # 공중 공격 유닛 클래스
-class Flayable_AttackUnit(AttackUnit, Flayable) :
+class Flyable_AttackUnit(AttackUnit, Flyable) :
     def __init__(self, name, hp, damage, flying_speed) :
         AttackUnit.__init__(self, name, hp, 0, damage) # 지상 스피드 0
-        Flayable.__init__(self, flying_speed)
+        Flyable.__init__(self, flying_speed)
 
     def move(self, location) :
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
 # 레이스
-class Wraith(Flayable_AttackUnit):
+class Wraith(Flyable_AttackUnit):
     def __init__(self):
-        Flayable_AttackUnit.__init__("레이스", 80, 20, 5)
+        Flyable_AttackUnit.__init__(self, "레이스", 80, 20, 5)
         self.clocked = False # 클로킹 모드 (해제 상태)
 
     def clocking(self):
