@@ -73,7 +73,7 @@ class Flayable :
         print("{0} : {1} 방향으로 날아갑니다. [속도 {2}]"\
             .format(name, location, self.flying_speed))
 
-# 공중 공격 유닛 클래스(다중 상속)
+# 공중 공격 유닛 클래스
 class Flayable_AttackUnit(AttackUnit, Flayable) :
     def __init__(self, name, hp, damage, flying_speed) :
         AttackUnit.__init__(self, name, hp, 0, damage) # 지상 스피드 0
@@ -82,3 +82,17 @@ class Flayable_AttackUnit(AttackUnit, Flayable) :
     def move(self, location) :
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
+
+# 레이스
+class Wraith(Flayable_AttackUnit):
+    def __init__(self):
+        Flayable_AttackUnit.__init__("레이스", 80, 20, 5)
+        self.clocked = False # 클로킹 모드 (해제 상태)
+
+    def clocking(self):
+        if self.clocked == True: # 클로킹 모드 -> 모드 해제
+            print("{0} : 클로킹 모드를 해제합니다.".format(self.name))
+            self.clocked = False
+        else: # 클로킹 모드 해제 -> 모드 설정
+            print("{0} : 클로킹 모드를 설정합니다.".format_map(self.name))
+            self.clocked = True
