@@ -106,7 +106,7 @@ def game_over():
     print("player : gg")
     print("[player] 님이 게임에서 퇴장하셨습니다.")
 
-# 실제 게임 진행
+# 게임 시작
 game_start()
 
 # 마린 3기 생성
@@ -152,5 +152,8 @@ for unit in attack_units:
     unit.attack("1시")
 
 # 전군 피해
+for unit in attack_units:
+    unit.damaged(randint(5, 21)) # 공격은 랜덤으로 받음 (5 ~ 20)
+
 
     
