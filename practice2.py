@@ -96,7 +96,7 @@ class Wraith(Flyable_AttackUnit):
             print("{0} : 클로킹 모드를 해제합니다.".format(self.name))
             self.clocked = False
         else: # 클로킹 모드 해제 -> 모드 설정
-            print("{0} : 클로킹 모드를 설정합니다.".format_map(self.name))
+            print("{0} : 클로킹 모드를 설정합니다.".format(self.name))
             self.clocked = True
 
 def game_start():
@@ -155,5 +155,6 @@ for unit in attack_units:
 for unit in attack_units:
     unit.damaged(randint(5, 21)) # 공격은 랜덤으로 받음 (5 ~ 20)
 
-
+# 게임 종료
+game_over()
     
