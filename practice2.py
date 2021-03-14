@@ -81,7 +81,6 @@ class Flyable_AttackUnit(AttackUnit, Flyable) :
         Flyable.__init__(self, flying_speed)
 
     def move(self, location) :
-        print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
 # 레이스
