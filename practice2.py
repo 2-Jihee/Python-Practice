@@ -9,7 +9,6 @@ class Unit :
         print("{0} 유닛이 생성되었습니다.".format(name))
 
     def move(self, location) :
-        print("[지상 유닛 이동]")
         print("{0} : {1} 방향으로 이동합니다. [속도 {2}]"\
             .format(self.name, location, self.speed))
     
