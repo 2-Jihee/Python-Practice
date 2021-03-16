@@ -1,32 +1,18 @@
-# 클래스
+# 예외처리
+try:
+    print("나누기 전용 계산기입니다.")
+    nums = []
+    nums.append(int(input("첫 번째 숫자를 입력하세요 : ")))
+    nums.append(int(input("두 번째 숫자를 입력하세요 : ")))
+    #nums.append(int(nums[0] / nums[1]))
+    print("{0} / {1} = {2}".format(nums[0], nums[1], nums[2]))
 
-# 마린 : 공격 유닛, 군인. 총을 쏠 수 있음
-name = "마린" # 유닛의 이름
-hp = 40 # 유닛의 체력
-damage = 5 # 유닛의 공격력
+except ValueError:
+    print("에러! 잘못된 값을 입력하였습니다.")
 
-print("{0} 유닛이 생성되었습니다.".format(name))
-print("체력 {0}, 공격력{1}\n".format(hp, damage))
+except ZeroDivisionError as err:
+    print(err)
 
-# 탱크 : 공격 유닛, 탱크. 포를 쏠 수 있는데, 일반 모드/ 시즈 모드.
-tank_name = "탱크"
-tank_hp = 150
-tank_damage = 35
-
-print("{0} 유닛이 생성되었습니다.".format(tank_name))
-print("체력 {0}, 공격력{1}\n".format(tank_hp, tank_damage))
-
-tank2_name = "탱크"
-tank2_hp = 150
-tank2_damage = 35
-
-print("{0} 유닛이 생성되었습니다.".format(tank2_name))
-print("체력 {0}, 공격력{1}\n".format(tank2_hp, tank2_damage))
-
-def attack(name, location, damage) :
-    print("{0} : {1} 방향으로 적군을 공격합니다. [공격력 {2}]".format(\
-        name, location, damage))
-
-attack(name, "1시", damage)
-attack(tank_name, "1시", tank_damage)
-attack(tank2_name, "1시", tank_damage)
+except Exception as err:
+    print("알 수 없는 에러가 발생하였습니다.")
+    print(err)
