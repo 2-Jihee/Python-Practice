@@ -16,9 +16,6 @@ class SoldOutError(Exception):
     def __init__(self, msg):
         self.msg = msg
 
-    def __str__ (self):
-        return self.msg
-
 try:
     while(True):
         print("[남은 치킨 : {0}]".format(chicken))
@@ -34,3 +31,5 @@ try:
             chicken -= order
 except ValueError:
     print("잘못된 값을 입력하였습니다.")
+except SoldOutError as err:
+    print(err)
