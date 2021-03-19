@@ -1,23 +1,32 @@
-class BigNumberError(Exception):
-    # pass
-    # 메시지를 같이 넣고 싶을 때 ↓
-    def __init__(self, msg): 
-        self.msg = msg
+''' 
+import theater_module
+theater_module.price(3) # 3명이서 영화 보러 갔을 때 가격
+theater_module.price_morning(4) # 4명이서 조조 할인 영화 보러 갔을 때
+theater_module.price_soldier(5) # 5명의 군인이 영화 보러 갔을 때 
+'''
 
-    def __str__ (self):
-        return self.msg
+# 별명을 붙여 줄여서 사용 가능
+''' 
+import theater_module as mv
+mv.price(3)
+mv.price_soldier(4)
+mv.price_soldier(5) 
+'''
 
-try:
-    print("한 자리 숫자 나누기 전용 계산기입니다.")
-    num1 = int(input("첫 번째 숫자를 입력하세요. : "))
-    num2 = int(input("두 번째 숫자를 입력하세요. : "))
-    if num1 >= 10 or num2 >= 10:
-        raise BigNumberError("입력값 : {0}, {1}".format(num1, num2))
-    print("{0} / {1} = {2}".format(num1, num2, int(num1 / num2)))
-except ValueError:
-    print("잘못된 값을 입력하였습니다. 한 자리 숫자만 입력하세요.")
-except BigNumberError as err:
-    print("에러가 발생하였습니다. 한 자리 숫자만 입력하세요.")
-    print(err)
-finally:
-    print("계산기를 이용해주셔서 감사합니다.")
+'''
+from theater_module import *
+# from random import *
+price(3)
+price_morning(4)
+price_soldier(5)
+'''
+
+'''
+from theater_module import price, price_morning
+price(5)
+price_morning(6)
+# price_soldier(7)
+'''
+
+from theater_module import price_soldier as price
+price(5)
