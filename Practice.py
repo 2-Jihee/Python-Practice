@@ -1,32 +1,18 @@
-''' 
-import theater_module
-theater_module.price(3) # 3명이서 영화 보러 갔을 때 가격
-theater_module.price_morning(4) # 4명이서 조조 할인 영화 보러 갔을 때
-theater_module.price_soldier(5) # 5명의 군인이 영화 보러 갔을 때 
-'''
+# 패키지
 
-# 별명을 붙여 줄여서 사용 가능
-''' 
-import theater_module as mv
-mv.price(3)
-mv.price_soldier(4)
-mv.price_soldier(5) 
-'''
+# import travel.thailand
+# trip_to = travel.thailand.ThailandPackage()
+# trip_to.detail()
 
-'''
-from theater_module import *
+# from travel.thailand import ThailandPackage
+# trip_to = ThailandPackage()
+# trip_to.detail()
+
+# from travel import vietnam
+# trip_to = vietnam.VietnamPackage()
+# trip_to.detail()
+
 # from random import *
-price(3)
-price_morning(4)
-price_soldier(5)
-'''
-
-'''
-from theater_module import price, price_morning
-price(5)
-price_morning(6)
-# price_soldier(7)
-'''
-
-from theater_module import price_soldier as price
-price(5)
+from travel import *
+trip_to = vietnam.VietnamPackage()
+trip_to.detail()
