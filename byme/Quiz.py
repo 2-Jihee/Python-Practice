@@ -12,3 +12,6 @@ byme.sign()
 유튜브 : 주소
 이메일 : 주소
 '''
+
+import byme
+byme.sign()
