@@ -15,7 +15,7 @@ Quiz) 하늘에서 떨어지는 똥 피하기 게임을 만드시오.
 '''
 
 import pygame
-from random import *
+import random
 
 # 1. 사용자 게임 초기화 (배경화면, 게임 이미지, 좌표, 속도, 폰트 둥)
 
@@ -51,12 +51,11 @@ character_speed = 0.6
 
 # 적 enemy 캐릭터
 enemy = pygame.image.load("C:/Users/USER/Desktop/Git-PythonWorkspace/study_python/enemy.png")
-enemy_size = enemy.get_rect().size  # 이미지의 크기를 구해옴
-enemy_width = enemy_size[0]  # 캐릭터의 가로 크기
-enemy_hight = enemy_size[1]  # 캐릭터의 세로 크기
-enemy_x_pos = (screen_width / 2) - (enemy_width / 2)  # 화면 가로의 절반 크기에 해당하는 곳에 위치 (가로 위치)
-enemy_y_pos = (screen_hight / 2) - (enemy_hight / 2)  # 화면 세로 크기 가장 아래에 해당하는 곳에 위치 (세로 위치)
-
+enemy_size = enemy.get_rect().size
+enemy_width = enemy_size[0] 
+enemy_hight = enemy_size[1]
+enemy_x_pos = screen_width == 0
+enemy_y_pos = screen_hight == 0
 
 # 이벤트 루프
 running = True
