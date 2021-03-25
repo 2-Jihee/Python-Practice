@@ -68,6 +68,12 @@ while running:
 
     character_x_pos += to_x * dt
 
+     # 가로 경계값 처리
+    if character_x_pos < 0:
+        character_x_pos = 0
+    elif character_x_pos > screen_width - character_width:
+        character_x_pos = screen_width - character_width
+
     # 2. 이벤트 처리 (키보드, 마우스 등)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
