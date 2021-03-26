@@ -54,8 +54,8 @@ enemy = pygame.image.load("C:/Users/USER/Desktop/Git-PythonWorkspace/study_pytho
 enemy_size = enemy.get_rect().size
 enemy_width = enemy_size[0] 
 enemy_hight = enemy_size[1]
-enemy_x_pos = screen_width == 0
-enemy_y_pos = screen_hight == 0
+enemy_x_pos = screen_width = 0
+enemy_y_pos = screen_hight = enemy_hight
 
 # 이벤트 루프
 running = True
