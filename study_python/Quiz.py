@@ -32,10 +32,10 @@ pygame.display.set_caption("Bright HEE's Game")
 clock = pygame.time.Clock()
 
 # 배경 이미지 불러오기
-background = pygame.image.load("C:/Users/USER/Desktop/Git-PythonWorkspace/study_python/background.png")
+background = pygame.image.load("C:/Users/USER/Desktop/Git-PythonWorkspace/pygame_basic/background1.png")
 
 # 캐릭터(스프라이트) 불러오기
-character = pygame.image.load("C:/Users/USER/Desktop/Git-PythonWorkspace/study_python/character.png")
+character = pygame.image.load("C:/Users/USER/Desktop/Git-PythonWorkspace/pygame_basic/character1.png")
 character_size = character.get_rect().size 
 character_width = character_size[0]
 character_hight = character_size[1]
