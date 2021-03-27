@@ -1,3 +1,4 @@
+import random
 import pygame
 ############################################################################
 # 기본 초기화 (반드시 해야하는 것들)
@@ -36,7 +37,7 @@ ddong = pygame.image.load("C://Users/USER/Desktop/Git-PythonWorkspace/pygame_bas
 ddong_size = character.get_rect().size
 ddong_width = character_size[0]
 ddong_height = character_size[1]
-ddong_x_pos = 0
+ddong_x_pos = random.randint(0, screen_width - ddong_width)
 ddong_y_pos = 0
 ddong_speed = 10
 
@@ -70,6 +71,9 @@ while running:
 
     ddong_y_pos += ddong_speed
 
+    if ddong_y_pos > screen_height:
+        ddong_y_pos = 0
+        ddong_x_pos = random.randint(0, screen_width - ddong_width)
 
     # 4. 충돌 처리
    
