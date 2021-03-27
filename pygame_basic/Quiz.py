@@ -76,7 +76,18 @@ while running:
         ddong_x_pos = random.randint(0, screen_width - ddong_width)
 
     # 4. 충돌 처리
-   
+    character_rect = character.get_rect()
+    character_rect.left = character_x_pos
+    character_rect.top = character_y_pos
+
+    ddong_rect = ddong.get_rect()
+    ddong_rect.left = ddong_x_pos
+    ddong_rect.top = ddong_y_pos
+
+    if character_rect.colliderect(ddong_rect):
+        print("충돌했습니다.")
+        running = False
+
     # 5. 화면에 그리기
     screen.blit(background, (0, 0))
     screen.blit(character, (character_x_pos, character_y_pos))
