@@ -31,6 +31,15 @@ character_y_pos = screen_height - character_height
 to_x = 0
 character_speed = 10
 
+# 똥 만들기
+ddong = pygame.image.load("C://Users/USER/Desktop/Git-PythonWorkspace/pygame_basic/enemy1.png")
+ddong_size = character.get_rect().size
+ddong_width = character_size[0]
+ddong_height = character_size[1]
+ddong_x_pos = 0
+ddong_y_pos = 0
+ddong_speed = 10
+
 running = True
 while running:
     dt = clock.tick(30)
@@ -59,13 +68,15 @@ while running:
     elif character_x_pos > screen_width - character_width:
         character_x_pos = screen_width - character_width
 
-    
+    ddong_y_pos += ddong_speed
+
+
     # 4. 충돌 처리
    
     # 5. 화면에 그리기
     screen.blit(background, (0, 0))
     screen.blit(character, (character_x_pos, character_y_pos))
-
+    screen.blit(ddong, (ddong_x_pos, ddong_y_pos))
 
     pygame.display.update()
 
