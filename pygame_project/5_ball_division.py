@@ -186,7 +186,7 @@ while running:
                     ball_height = ball_rect.size[1]
 
                     # 나눠진 공 정보
-                    small_ball_rect = ball_images[ball_img_idx + 1}].get_rect()
+                    small_ball_rect = ball_images[ball_img_idx + 1].get_rect()
                     small_ball_width = small_ball_rect.size[0]
                     small_ball_height = small_ball_rect.size[1]
 
