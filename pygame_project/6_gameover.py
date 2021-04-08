@@ -234,6 +234,11 @@ while running:
         del weapons[weapon_to_remove]
         weapon_to_remove = -1
 
+    # 모든 공을 없앤 경우 게임 종료 (성공)
+    if len(balls) == 0:
+        game_result = "Mission Complete"
+        running = False
+
     # 5. 화면에 그리기
     screen.blit(background, (0,0))
 
@@ -264,7 +269,8 @@ while running:
 
 # 게임 오버 메시지
 msg = game_font.render(game_result, True, (255, 255, 0)) # 노란색
-msg_rect = msg.get_rect(center=(int(screen_width / 2, screen_height / 2)))
+msg_rect = msg.get_rect(center=(int(screen_width / 2), int(screen_height / 2)))
+screen.blit(msg, msg_rect)
 pygame.display.update()
 
 # 2초 대기
