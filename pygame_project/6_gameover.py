@@ -225,6 +225,11 @@ while running:
                         "init_spd_y" : ball_speed_y[ball_img_idx + 1]})
                 break
 
+        else: # 계속 게임을 진행
+            continue # 안쪽 for문 조건이 맞지 않으면 continue. 바깥 for문 계속 수행
+        break 
+
+             
     # 충돌된 공 or 무기 없애기
     if ball_to_remove > -1:
         del balls[ball_to_remove]
